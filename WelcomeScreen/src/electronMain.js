@@ -8,7 +8,7 @@ function isDev() {
 function createWindow() {
     win = new BrowserWindow({ width: 800, height: 600 })
     win.loadURL(url.format({
-        pathname: path.join(__dirname, '../dist/index.html'),
+        pathname: path.join(__dirname, '../dist/WelcomeScreen/index.html'),//hay que modificarlo tras la instalación
         protocol: 'file',
         slashes: true
     }));
