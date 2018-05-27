@@ -12,6 +12,10 @@ function createWindow() {
         protocol: 'file',
         slashes: true
     }));
+
+    win.setFullScreen(true); //Pantalla completa
+
+    win.setMenu(null); //Quitar menú
     /*if (isDev()) {
         win.webContents.openDevTools()
     }  */ 
