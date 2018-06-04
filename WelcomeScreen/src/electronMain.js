@@ -15,6 +15,10 @@ function createWindow() {
     /*if (isDev()) {
         win.webContents.openDevTools()
     }  */ 
+
+    //Ventana sin menu
+    win.setMenuBarVisibility(false);
+
     win.on('closed', () => {
         win = null
     })
