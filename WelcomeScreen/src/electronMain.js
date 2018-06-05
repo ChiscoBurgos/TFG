@@ -19,8 +19,7 @@ function createWindow() {
     //Ventana sin menu
     win.setMenuBarVisibility(false);
 
-    //Tamaño ventana
-    var winSize = win.getSize();
+    win.setFullScreen(true);
 
     win.on('closed', () => {
         win = null

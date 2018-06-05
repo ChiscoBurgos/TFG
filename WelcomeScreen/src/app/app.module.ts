@@ -7,6 +7,9 @@ import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { WeatherComponent } from './weather/weather.component';
 import { TwitterComponent } from './twitter/twitter.component';
 import { VideoComponent } from './video/video.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DashComponent } from './dash/dash.component';
+import { MatGridListModule, MatCardModule, MatMenuModule, MatIconModule, MatButtonModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -14,11 +17,18 @@ import { VideoComponent } from './video/video.component';
     MapComponent,
     WeatherComponent,
     TwitterComponent,
-    VideoComponent
+    VideoComponent,
+    DashComponent
   ],
   imports: [
     BrowserModule,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    BrowserAnimationsModule,
+    MatGridListModule,
+    MatCardModule,
+    MatMenuModule,
+    MatIconModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
