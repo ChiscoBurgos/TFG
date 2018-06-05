@@ -7,6 +7,11 @@ import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { WeatherComponent } from './weather/weather.component';
 import { TwitterComponent } from './twitter/twitter.component';
 import { VideoComponent } from './video/video.component';
+import { ConfComponent } from './conf/conf.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatButtonModule, MatCheckboxModule, MatInputModule, MatFormFieldModule, 
+  MatIconModule, MatTabsModule, MatPseudoCheckboxModule} from '@angular/material';
+
 
 @NgModule({
   declarations: [
@@ -14,11 +19,20 @@ import { VideoComponent } from './video/video.component';
     MapComponent,
     WeatherComponent,
     TwitterComponent,
-    VideoComponent
+    VideoComponent,
+    ConfComponent
   ],
   imports: [
     BrowserModule,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    BrowserAnimationsModule,
+    MatButtonModule, 
+    MatCheckboxModule,
+    MatIconModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatTabsModule,
+    MatPseudoCheckboxModule
   ],
   providers: [],
   bootstrap: [AppComponent]
