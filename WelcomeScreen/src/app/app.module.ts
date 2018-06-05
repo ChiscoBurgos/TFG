@@ -11,6 +11,8 @@ import { ConfComponent } from './conf/conf.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule, MatCheckboxModule, MatInputModule, MatFormFieldModule, 
   MatIconModule, MatTabsModule, MatPseudoCheckboxModule} from '@angular/material';
+import { AppRoutingModule } from './/app-routing.module';
+import { InicioComponent } from './inicio/inicio.component';
 
 
 @NgModule({
@@ -20,7 +22,8 @@ import {MatButtonModule, MatCheckboxModule, MatInputModule, MatFormFieldModule,
     WeatherComponent,
     TwitterComponent,
     VideoComponent,
-    ConfComponent
+    ConfComponent,
+    InicioComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +35,8 @@ import {MatButtonModule, MatCheckboxModule, MatInputModule, MatFormFieldModule,
     MatInputModule,
     MatFormFieldModule,
     MatTabsModule,
-    MatPseudoCheckboxModule
+    MatPseudoCheckboxModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
