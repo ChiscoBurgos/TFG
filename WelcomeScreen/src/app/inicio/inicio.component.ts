@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import {HostListener} from '@angular/core';
+import { Component, OnInit, HostListener, ElementRef, ViewChild} from '@angular/core';
 
 @Component({
   selector: 'app-inicio',
@@ -9,14 +8,19 @@ import {HostListener} from '@angular/core';
 
 export class InicioComponent implements OnInit {
 
-  innerHeight = window.innerHeight;
+  @ViewChild('navIni') elementView: ElementRef;
+  public navIniValue: number;
+  public title = "Company name";
+  
   constructor() { }
 
   @HostListener('window:resize', ['$event'])
   onResize(event) {
-    this.innerHeight = window.innerHeight;
+    this.navIniValue = this.elementView.nativeElement.offsetHeight;
   }
+
   ngOnInit() {
+    this.navIniValue = this.elementView.nativeElement.offsetHeight;
   }
 
 }

@@ -1,6 +1,8 @@
-<nav class="navbar justify-content-end" role="navigation">
-    <a routerLink="/conf" class="nav-item"><mat-icon>settings</mat-icon></a>
+<nav class="navbar justify-content-end row" role="navigation" #navIni>
+    <h1 class="col-10 offset-1">{{title}}</h1>
+    <a routerLink="/conf" class="nav-item col-1"><mat-icon>settings</mat-icon></a>
 </nav>
+<p>{{navIniValue}}</p>
 <div class="row">
     <app-map id="appMap" class="col-6"></app-map>
     <app-twitter id="appTwitter" class="col-6"></app-twitter>

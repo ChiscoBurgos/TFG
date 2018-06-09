@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { } from '@types/googlemaps';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { ViewChild } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -10,9 +9,20 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 })
 export class MapComponent implements OnInit {
 
+  public innerHeight: any;
+  public mapHeight: any;
+
+  @HostListener('window:resize', ['$event']) 
+  onResize(event){
+    this.innerHeight = window.innerHeight;
+    this.mapHeight = this.innerHeight-100;
+  }
+
   constructor() { }
   
   ngOnInit() {
+    this.innerHeight = window.innerHeight;
+    this.mapHeight = this.innerHeight-100;
   }
 /*
   @ViewChild('gmap') gmapElement: any;
