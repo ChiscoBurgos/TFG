@@ -1,4 +1,6 @@
 import { Component, OnInit, HostListener, ElementRef, ViewChild} from '@angular/core';
+import { MapComponent } from '../map/map.component';
+import { VideoComponent } from '../video/video.component';
 
 @Component({
   selector: 'app-inicio',
@@ -8,7 +10,9 @@ import { Component, OnInit, HostListener, ElementRef, ViewChild} from '@angular/
 
 export class InicioComponent implements OnInit {
 
-  @ViewChild('navIni') elementView: ElementRef;
+  @ViewChild('navIni') navIni: ElementRef;
+  @ViewChild('MapComponent') mapComp: MapComponent;
+  @ViewChild('VideoComponent') vidComp: VideoComponent;
   public navIniValue: number;
   public title = "Company name";
   
@@ -16,11 +20,12 @@ export class InicioComponent implements OnInit {
 
   @HostListener('window:resize', ['$event'])
   onResize(event) {
-    this.navIniValue = this.elementView.nativeElement.offsetHeight;
+    this.navIniValue = this.navIni.nativeElement.offsetHeight;
+    this.mapComp.changeHeight(window.innerHeight - this.navIniValue);
+    this.vidComp.changeHeight(window.innerHeight - this.navIniValue);
   }
 
   ngOnInit() {
-    this.navIniValue = this.elementView.nativeElement.offsetHeight;
+    this.navIniValue = this.navIni.nativeElement.offsetHeight;
   }
-
 }

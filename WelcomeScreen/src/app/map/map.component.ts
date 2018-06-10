@@ -1,6 +1,7 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import { ViewChild } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { InicioComponent } from '../inicio/inicio.component';
 
 @Component({
   selector: 'app-map',
@@ -9,20 +10,23 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 })
 export class MapComponent implements OnInit {
 
-  public innerHeight: any;
-  public mapHeight: any;
-
-  @HostListener('window:resize', ['$event']) 
-  onResize(event){
-    this.innerHeight = window.innerHeight;
-    this.mapHeight = this.innerHeight-100;
-  }
+  @ViewChild('InicioComponent') iniComp: InicioComponent;
+  public navHeight: number = 72;
+  public mapHeight: number = (window.innerHeight - this.navHeight)*0.45;
 
   constructor() { }
+
+  public changeHeight(num){
+    this.navHeight = num;
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event){
+    this.mapHeight = (window.innerHeight - this.navHeight)*0.45;
+  }
   
   ngOnInit() {
-    this.innerHeight = window.innerHeight;
-    this.mapHeight = this.innerHeight-100;
+    
   }
 /*
   @ViewChild('gmap') gmapElement: any;
