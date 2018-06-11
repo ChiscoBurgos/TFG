@@ -21,8 +21,8 @@ export class InicioComponent implements OnInit {
   @HostListener('window:resize', ['$event'])
   onResize(event) {
     this.navIniValue = this.navIni.nativeElement.offsetHeight;
-    this.mapComp.changeHeight(window.innerHeight - this.navIniValue);
-    this.vidComp.changeHeight(window.innerHeight - this.navIniValue);
+    this.mapComp.changeHeight(this.navIniValue);
+    this.vidComp.changeHeight(this.navIniValue);
   }
 
   ngOnInit() {

@@ -1,4 +1,4 @@
-import { Component, OnInit, HostListener } from '@angular/core';
+import { Component, OnInit, HostListener, ElementRef } from '@angular/core';
 import { ViewChild } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { InicioComponent } from '../inicio/inicio.component';
@@ -13,6 +13,8 @@ export class MapComponent implements OnInit {
   @ViewChild('InicioComponent') iniComp: InicioComponent;
   public navHeight: number = 72;
   public mapHeight: number = (window.innerHeight - this.navHeight)*0.45;
+  positions:any;
+  ciudad: string = "Burgos";
 
   constructor() { }
 
@@ -20,49 +22,37 @@ export class MapComponent implements OnInit {
     this.navHeight = num;
   }
 
+  public changeCity(city){
+    this.ciudad = city;
+  }
+
+  public getMapHeight(): number{
+    return this.mapHeight;
+  }
+
   @HostListener('window:resize', ['$event'])
   onResize(event){
     this.mapHeight = (window.innerHeight - this.navHeight)*0.45;
   }
-  
+
   ngOnInit() {
     
-  }
-/*
-  @ViewChild('gmap') gmapElement: any;
-  map: google.maps.Map;
-
-  ngOnInit() {
-    var mapProp = {
-      center: new google.maps.LatLng(18.5793, 73.8143),
-      zoom: 10,
-      mapTypeId: google.maps.MapTypeId.ROADMAP
-    };
-    var geocoder = new google.maps.Geocoder();
-
-    //this.geocodeAddress(geocoder, mapProp);
-
-    var trafficLayer = new google.maps.TrafficLayer();
-   // trafficLayer.setMap(mapProp);
-
-    this.map = new google.maps.Map(this.gmapElement.nativeElement, mapProp);
-  }
-
-  /*geocodeAddress(geocoder, resultsMap) {
-    var address = "Burgos"; //Nombre de la ciudad
-    geocoder.geocode({ 'address': address }, function (results, status) {
-      if (status === 'OK') {
-        resultsMap.setCenter(results[0].geometry.location);
-        var marker = new google.maps.Marker({
-            map: resultsMap,
-            position: results[0].geometry.location
-        });
-        var latitud = marker.getPosition().lat;
-        var longitud = marker.getPosition().lng;
-      } else {
-        alert('Geocode was not successful for the following reason: ' + status);
-      }
-    });
   };
-*/
+
+  //Ng2-ui maps methods
+  onMapReady(map) {
+    console.log('map', map);
+    console.log('markers', map.markers);  // to get all markers as an array 
+  }
+  onIdle(event) {
+    console.log('map', event.target);
+  }
+  onMarkerInit(marker) {
+    console.log('marker', marker);
+  }
+  onMapClick(event) {
+    this.positions.push(event.latLng);
+    event.target.panTo(event.latLng);
+  }
+
 }

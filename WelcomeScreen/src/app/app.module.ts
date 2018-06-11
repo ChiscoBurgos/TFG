@@ -13,6 +13,7 @@ import {MatButtonModule, MatCheckboxModule, MatInputModule, MatFormFieldModule,
   MatIconModule, MatTabsModule, MatPseudoCheckboxModule} from '@angular/material';
 import { AppRoutingModule } from './/app-routing.module';
 import { InicioComponent } from './inicio/inicio.component';
+import { NguiMapModule } from '@ngui/map';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { InicioComponent } from './inicio/inicio.component';
     MatFormFieldModule,
     MatTabsModule,
     MatPseudoCheckboxModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NguiMapModule.forRoot({apiUrl: 'https://maps.google.com/maps/api/js?key=AIzaSyAAMIVn2UxMJpNb2I2axTLT8ACoFULeP9o'})
   ],
   providers: [],
   bootstrap: [AppComponent]

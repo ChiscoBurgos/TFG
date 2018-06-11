@@ -1,5 +1,12 @@
 <div class="row" [ngStyle]="{'height':mapHeight}">
   <div class="col">
-    <iframe width="100%" height="{{mapHeight}}" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
+    <ngui-map [ngStyle]="{'height.px':getMapHeight()}"
+      zoom="13" 
+      center="{{ciudad}}"
+      (mapReady$)="onMapReady($event)"
+      (mapClick)="onMapClick($event)"
+      (idle)="onIdle($event)">
+        <traffic-layer></traffic-layer>
+    </ngui-map>
   </div>
 </div>
