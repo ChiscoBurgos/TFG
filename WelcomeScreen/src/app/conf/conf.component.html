@@ -13,7 +13,7 @@
   </div>
 
   <mat-form-field class="example-container col-8 offset-2">
-    <input matInput placeholder="Ciudad" aria-describedby="cityHelp" value="Burgos">
+    <input matInput placeholder="Ciudad" aria-describedby="cityHelp" [(ngModel)]="city">
     <small id="cityHelp" class="form-text text-muted">Escriba la ciudad de la que quiera obtener información.</small>
   </mat-form-field>
 
@@ -23,7 +23,7 @@
   </mat-form-field>
 
   <mat-form-field class="col-8 offset-2">
-      <input matInput placeholder="Ruta Youtube" aria-describedby="youHelp" >
-      <small id="youHelp" class="form-text text-muted">Introduzca la ruta Youtube</small>
+      <input matInput placeholder="Ruta de vídeo" aria-describedby="viHelp" >
+      <small id="viHelp" class="form-text text-muted">Introduzca la ruta de vídeo.</small>
   </mat-form-field>
 </form>

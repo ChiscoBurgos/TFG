@@ -14,6 +14,12 @@ import {MatButtonModule, MatCheckboxModule, MatInputModule, MatFormFieldModule,
 import { AppRoutingModule } from './/app-routing.module';
 import { InicioComponent } from './inicio/inicio.component';
 import { NguiMapModule } from '@ngui/map';
+import {VgCoreModule} from 'videogular2/core';
+import {VgControlsModule} from 'videogular2/controls';
+import {VgOverlayPlayModule} from 'videogular2/overlay-play';
+import {VgBufferingModule} from 'videogular2/buffering';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -38,7 +44,13 @@ import { NguiMapModule } from '@ngui/map';
     MatTabsModule,
     MatPseudoCheckboxModule,
     AppRoutingModule,
-    NguiMapModule.forRoot({apiUrl: 'https://maps.google.com/maps/api/js?key=AIzaSyAAMIVn2UxMJpNb2I2axTLT8ACoFULeP9o'})
+    NguiMapModule.forRoot({apiUrl: 'https://maps.google.com/maps/api/js?key=AIzaSyAAMIVn2UxMJpNb2I2axTLT8ACoFULeP9o'}),
+    VgCoreModule,
+    VgControlsModule,
+    VgOverlayPlayModule,
+    VgBufferingModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

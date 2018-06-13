@@ -11,6 +11,7 @@ export class ConfComponent implements OnInit {
 
   public innerHeight: any;
   public title = "Company name";
+  public city = "Burgos";
   
   constructor() { }
 
