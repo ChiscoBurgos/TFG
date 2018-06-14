@@ -9,8 +9,13 @@ import { TwitterComponent } from './twitter/twitter.component';
 import { VideoComponent } from './video/video.component';
 import { ConfComponent } from './conf/conf.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule, MatCheckboxModule, MatInputModule, MatFormFieldModule, 
-  MatIconModule, MatTabsModule, MatPseudoCheckboxModule} from '@angular/material';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatRadioModule} from '@angular/material/radio';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import {MatSelectModule} from '@angular/material/select';
+import {MatButtonModule, MatIconModule, MatTabsModule, MatPseudoCheckboxModule} from '@angular/material';
 import { AppRoutingModule } from './/app-routing.module';
 import { InicioComponent } from './inicio/inicio.component';
 import { NguiMapModule } from '@ngui/map';
@@ -19,7 +24,7 @@ import {VgControlsModule} from 'videogular2/controls';
 import {VgOverlayPlayModule} from 'videogular2/overlay-play';
 import {VgBufferingModule} from 'videogular2/buffering';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -41,8 +46,10 @@ import { FormsModule } from '@angular/forms';
     MatIconModule,
     MatInputModule,
     MatFormFieldModule,
+    MatAutocompleteModule,
     MatTabsModule,
     MatPseudoCheckboxModule,
+    MatRadioModule,
     AppRoutingModule,
     NguiMapModule.forRoot({apiUrl: 'https://maps.google.com/maps/api/js?key=AIzaSyAAMIVn2UxMJpNb2I2axTLT8ACoFULeP9o'}),
     VgCoreModule,
@@ -50,6 +57,8 @@ import { FormsModule } from '@angular/forms';
     VgOverlayPlayModule,
     VgBufferingModule,
     FormsModule,
+    ReactiveFormsModule,
+    MatSelectModule,
     HttpClientModule
   ],
   providers: [],

@@ -28,4 +28,6 @@ export class VideoComponent implements OnInit {
 
   }
 
+  onPlayerReady(arg){}
+
 }
