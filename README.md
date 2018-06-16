@@ -1,9 +1,11 @@
-# TFG
-Trabajo de Fin de Grado
+# TFG - Panel informativo para eventos
+Trabajo de Fin de Grado - Panel informativo para eventos
 ## Autor
 Francisco Crespo Diez
 ## Universidad
 Universidad de Burgos - España
+## Tutores de empresa
+HP SCDS
 ## Instalación
 Recomiendo el uso de VS Code y Node.js instalado.
 1. Copiar repositorio: ```git clone https://github.com/ChiscoBurgos/TFG.git```
