@@ -1,0 +1,87 @@
+<nav class="navbar row">
+    <a routerLink="/inicio" class="nav-item col-1"><mat-icon>home</mat-icon></a>
+    <h1 class="col-10">{{title}}</h1>
+    <a class="col-1"></a>
+</nav>
+<form class="row">
+  <div class="col-8 offset-2 row">
+    <h6 class="col-12">Ventanas visibles</h6>
+    <mat-checkbox [(ngModel)]="weCheck" [formControl]="disableWeSelect" class="col-2">Tiempo</mat-checkbox>
+    <mat-form-field class="col-2">
+      <mat-select placeholder="Filas" [formControl]="weSelectFi" [disabled]="!disableWeSelect.value">
+        <mat-option *ngFor="let op of options" [value]="op">
+          {{ op }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field class="col-2">
+      <mat-select placeholder="Columnas" [formControl]="weSelectCol" [disabled]="!disableWeSelect.value">
+        <mat-option *ngFor="let op of options" [value]="op">
+          {{ op }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-checkbox [(ngModel)]="trCheck" [formControl]="disableTrSelect" class="col-2">Tráfico</mat-checkbox>
+    <mat-form-field class="col-2">
+      <mat-select placeholder="Filas" [formControl]="trSelectFi" [disabled]="!disableTrSelect.value">
+        <mat-option *ngFor="let op of options" [value]="op">
+          {{ op }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field class="col-2">
+      <mat-select placeholder="Columnas" [formControl]="trSelectCol" [disabled]="!disableTrSelect.value">
+        <mat-option *ngFor="let op of options" [value]="op">
+          {{ op }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-checkbox [(ngModel)]="twCheck" [formControl]="disableTwSelect" class="col-2">Twitter</mat-checkbox>
+    <mat-form-field class="col-2">
+      <mat-select placeholder="Filas" [formControl]="twSelectFi" [disabled]="!disableTwSelect.value">
+        <mat-option *ngFor="let op of options" [value]="op">
+          {{ op }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field class="col-2">
+      <mat-select placeholder="Columnas" [formControl]="twSelectCol" [disabled]="!disableTwSelect.value">
+        <mat-option *ngFor="let op of options" [value]="op">
+          {{ op }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-checkbox [(ngModel)]="viCheck" [formControl]="disableViSelect" class="col-2">Vídeo</mat-checkbox>
+    <mat-form-field class="col-2">
+      <mat-select placeholder="Filas" [formControl]="viSelectFi" [disabled]="!disableViSelect.value">
+        <mat-option *ngFor="let op of options" [value]="op">
+          {{ op }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field class="col-2">
+      <mat-select placeholder="Columnas" [formControl]="viSelectCol" [disabled]="!disableViSelect.value">
+        <mat-option *ngFor="let op of options" [value]="op">
+          {{ op }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <mat-form-field class="example-container col-8 offset-2">
+    <input matInput placeholder="Ciudad" aria-describedby="cityHelp" [(ngModel)]="city">
+    <small id="cityHelp" class="form-text text-muted">Escriba la ciudad de la que quiera obtener información.</small>
+  </mat-form-field>
+
+  <mat-form-field class="example-container col-8 offset-2">
+    <input matInput placeholder="Hashtag Twitter" aria-describedby="twHelp" >
+    <small id="twHelp" class="form-text text-muted">Escriba el hashtag del que quiera obtener información.</small>
+  </mat-form-field>
+
+  <mat-form-field class="col-8 offset-2">
+      <input matInput placeholder="Ruta de vídeo" aria-describedby="viHelp" >
+      <small id="viHelp" class="form-text text-muted">Introduzca la ruta de vídeo.</small>
+  </mat-form-field>
+</form>
+<nav class="navbar fixed-bottom navbar-light bg-light justify-content-center text-muted">
+  Designed by Francisco Crespo - Universidad de Burgos - HP SCDS</nav>
