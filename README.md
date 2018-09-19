@@ -8,7 +8,7 @@ Universidad de Burgos - España
 HP SCDS
 ## Instalación
 Recomiendo el uso de VS Code y Node.js instalado.
-1. Copiar repositorio: ```git clone https://github.com/ChiscoBurgos/TFG.git```
+1. Copiar repositorio: ```git clone https://github.com/FranBurgos/TFG.git```
 2. Ir al directorio de la aplicación: ```cd TFG/WelcomeScreen```
 3. Ejecutar ```npm i``` para cargar todos los módulos necesarios.
 4. Ejecutar ```npm run electron``` para ejecutar la aplicación sobre Electron.
