@@ -6,9 +6,9 @@
         "type": "node",
         "request": "launch",
         "cwd": "${workspaceRoot}",
-        "runtimeExecutable": "${workspaceRoot}/WelcomeScreen/node_modules/.bin/electron",
+        "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron",
         "windows": {
-          "runtimeExecutable": "${workspaceRoot}/WelcomeScreen/node_modules/.bin/electron.cmd"
+          "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron.cmd"
         },
         "args" : ["."]
       }

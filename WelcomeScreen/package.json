@@ -3,10 +3,10 @@
   "version": "0.0.0",
   "license": "MIT",
   "main": "main.js",
+  "description": "Welcome Screen",
   "author": {
     "name": "Francisco Crespo Diez",
-    "email": "fcd0011@alu.ubu.es",
-    "url": "https://github.com/FranBurgos/TFG.git"
+    "email": "fcd0011@alu.ubu.es"
   },
   "scripts": {
     "ng": "ng",
@@ -16,8 +16,14 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "electron": "electron .",
-    "electron-build": "ng build --prod && electron ."
+    "electron-build": "ng build --prod && electron .",
+    "pack": "build --dir"
   },
+  "build":{
+    "appId": "com.welcome.screen",
+    "productName": "Welcome Screen"
+  },
+  "repository": "https://github.com/FranBurgos/TFG.git",
   "private": true,
   "dependencies": {
     "@angular/animations": "^6.1.0",
