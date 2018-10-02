@@ -19,7 +19,7 @@
     "electron-build": "ng build --prod && electron .",
     "pack": "build --dir"
   },
-  "build":{
+  "build": {
     "appId": "com.welcome.screen",
     "productName": "Welcome Screen"
   },
@@ -49,6 +49,7 @@
     "@types/node": "~8.9.4",
     "codelyzer": "~4.3.0",
     "electron": "^3.0.0",
+    "electron-packager": "^12.1.2",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~3.0.0",
